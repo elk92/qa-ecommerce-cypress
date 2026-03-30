@@ -34,27 +34,17 @@ The focus is on ensuring that the core functionality of the e-commerce system is
 ### ✅ Smoke Tests (Critical Flows)
 
 - User login
-- Add product to cart
+- Product registration
 - Cart validation
-- Checkout start
+- Checkout workflow
 
 ### 🔄 Next Steps (Planned)
 
-- API validation with `cy.intercept`
+- API validation
 - Negative scenarios (invalid login, payment failure)
 - Test data management
 - CI/CD pipeline integration
 - Parallel execution
-
----
-
-## 📂 Project Structure
-
-
-
-
-
-
 ---
 
 ## ▶️ How to Run
