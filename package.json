@@ -7,9 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Elcio QA",
+  "author": "Elcio QA Engineer ",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^15.13.0"
+  },
+  "scripts": {
+    "test": "cypress run",
+    "cypress": "cypress open"
   }
 }

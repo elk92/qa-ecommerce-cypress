@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 describe('Functional Checkout on Saucedemo', () => {
 
   beforeEach(() => {
