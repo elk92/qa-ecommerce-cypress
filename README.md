@@ -1,58 +1,157 @@
-# 🧪 QA E2E Automation - E-commerce (Cypress)
+# 🧪 QA E2E Automation – SauceDemo (Cypress)
 
-This project is an end-to-end test automation suite built with **Cypress** and **JavaScript**, simulating real user journeys in an e-commerce application.
+## 📌 Overview
 
-The main goal of this project is to demonstrate a **practical QA approach**, focusing on critical user flows, test reliability, and scalable automation design.
+This project demonstrates an end-to-end test automation strategy for a modern e-commerce application using [SauceDemo](https://www.saucedemo.com/) as the system under test.
+
+The goal is to showcase a **QA Engineering approach**, focusing not only on UI automation but also on **test architecture, reliability, and scalability**.
 
 ---
 
 ## 🚀 Tech Stack
 
-- Cypress
-- JavaScript (ES6+)
-- Node.js
-- GitHub Actions (CI - planned)
+* **Framework:** Cypress
+* **Language:** JavaScript
+* **CI/CD:** GitHub Actions
+* **Reporting:** Mochawesome *(optional integration)*
+* **Data Generation:** Faker
+* **API Testing:** Cypress `cy.request`
 
 ---
 
-## 🎯 Test Strategy
+## 🏗️ Test Architecture
 
-This project follows a **risk-based testing approach**, prioritizing critical business flows:
+The project follows a modular and scalable structure inspired by real-world QA engineering practices:
 
-- Authentication (Login)
-- Product browsing
-- Add to cart
-- Cart validation
-- Checkout process
+```
+cypress/
+  e2e/          # Test specs (test scenarios)
+  pages/        # Page Object Model (UI abstraction)
+  actions/      # Business logic (user flows)
+  api/          # API layer (backend interaction)
+  fixtures/     # Static test data
+  support/      # Custom commands & global configs
+```
 
-The focus is on ensuring that the core functionality of the e-commerce system is stable and reliable.
+### Key Principles
+
+* Separation of concerns (UI vs business vs API)
+* Reusability and maintainability
+* Reduced test flakiness
+* Readable and scalable test design
 
 ---
 
-## 🧪 Test Coverage
+## 🔁 Testing Strategy
 
-### ✅ Smoke Tests (Critical Flows)
+This project applies a **multi-layered testing strategy**:
 
-- User login
-- Product registration
-- Cart validation
-- Checkout workflow
+### ✅ UI Tests (E2E)
 
-### 🔄 Next Steps (Planned)
+* Validate critical user journeys:
 
-- API validation
-- Negative scenarios (invalid login, payment failure)
-- Test data management
-- CI/CD pipeline integration
-- Parallel execution
+  * Login
+  * Product selection
+  * Checkout flow
+
+### 🔌 API Tests
+
+* Authentication validation
+* Backend data consistency checks
+
+### 🔀 Hybrid Tests (UI + API)
+
+* API-based login to speed up tests and reduce flakiness
+* Direct state setup using backend responses
+
 ---
 
-## ▶️ How to Run
+## 🧠 Reliability & Anti-Flaky Approach
 
-### Install dependencies
+To ensure stable execution:
+
+* Network request interception using `cy.intercept`
+* Explicit waits for critical API calls
+* Avoidance of arbitrary time-based waits
+* Test isolation and independent data setup
+
+---
+
+## 🎲 Test Data Management
+
+Dynamic test data is generated using Faker to ensure:
+
+* Test independence
+* Reduced data collision
+* Realistic test scenarios
+
+---
+
+## ⚙️ CI/CD Integration
+
+Automated test execution is configured using **GitHub Actions**:
+
+* Runs on every push and pull request
+* Supports parallel execution *(optional enhancement)*
+* Stores test artifacts (videos & screenshots)
+
+---
+
+## 📊 Reporting
+
+Test results can be enhanced with Mochawesome reports, providing:
+
+* Detailed execution logs
+* Visual reports for debugging
+* Historical insights (when integrated with CI)
+
+---
+
+## ▶️ How to Run Locally
+
+### 1. Install dependencies
 
 ```bash
 npm install
-npx cypress open
-npx cypress run
+```
 
+### 2. Run tests (headless)
+
+```bash
+npx cypress run
+```
+
+### 3. Open Cypress UI
+
+```bash
+npx cypress open
+```
+
+---
+
+## 📈 Future Improvements
+
+* [ ] Parallel execution in CI
+* [ ] Advanced reporting (Allure)
+* [ ] Performance testing integration (k6)
+* [ ] Contract testing with mocked APIs
+* [ ] Visual regression testing
+
+---
+
+## 👨‍💻 Author
+
+QA Engineer focused on building scalable and reliable test automation solutions.
+
+* Strong background in E2E, API, and test architecture
+* Experience with modern testing tools and CI/CD pipelines
+* Passionate about quality engineering and continuous improvement
+
+---
+
+## 💡 Final Notes
+
+This project is not just about testing a demo application,
+it is designed to reflect how a **Senior QA Engineer approaches automation in real-world scenarios**.
+
+---
